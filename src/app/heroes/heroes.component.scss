@@ -1,4 +1,15 @@
 /* HeroesComponent's private CSS styles */
+.heroes-container {
+  display: flex;
+  .heroes-list-container{
+    margin-right: 60px;
+  }
+  app-hero-detail {
+    background-color: silver;
+    padding: 15px;
+    max-height: 200px;
+  }
+}
 .heroes {
   margin: 0 0 2em 0;
   list-style-type: none;
