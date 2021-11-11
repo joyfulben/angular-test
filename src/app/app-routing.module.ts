@@ -5,6 +5,7 @@ import { DatesComponent } from './dates/dates.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'dates', component: DatesComponent }
 ];
 
