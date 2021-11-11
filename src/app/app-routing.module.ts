@@ -4,6 +4,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { DatesComponent } from './dates/dates.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'heroes', component: HeroesComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dates', component: DatesComponent }
