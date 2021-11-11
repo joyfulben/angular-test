@@ -1,0 +1,12 @@
+<div *ngIf="selectedHero">
+  <!-- Notice how the pipe inside of interpolation updates the element to be uppercase -->
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
+  </div>
+  <hr>
+  <div><span>Element: </span>{{selectedHero.element | uppercase}}</div>
+
+</div>
