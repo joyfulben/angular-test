@@ -2,10 +2,10 @@
   <div class="heroes-list-container">
   <h2>My Heroes</h2>
   <ul class="heroes">
-    <li *ngFor="let hero of heroes"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)">
-      <span class="badge">{{hero.id}}</span> {{hero.name}} | {{hero.element}}
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}} | {{hero.element}}
+      </a>
     </li>
   </ul>
   </div>
