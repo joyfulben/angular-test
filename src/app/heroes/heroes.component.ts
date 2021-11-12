@@ -12,10 +12,10 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[] = [];
 
-  add(name: string): void {
+  add(name: string, element: string): void {
   name = name.trim();
   if (!name) { return; }
-  this.heroService.addHero({ name } as Hero)
+  this.heroService.addHero({ name, element } as Hero)
     .subscribe(hero => {
       this.heroes.push(hero);
     });
