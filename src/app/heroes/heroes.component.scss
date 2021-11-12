@@ -2,6 +2,30 @@
 .heroes-container {
   display: flex;
   flex-direction: column;
+  .hero-preview-container {
+    display: flex;
+    align-items: center;
+    a {
+        min-width: 250px;
+    }
+    .delete {
+      max-height: 30px;
+      max-width: 30px;
+      background-color: black;
+      color: red;
+      border: outset 3px silver;
+      transition: 400ms ease;
+
+      &:hover {
+        background-color: red;
+        color: black;
+        border: inset 3px silver;
+        transition: 400ms ease;
+
+      }
+    }
+
+  }
   .add-hero-container {
     height: 50px;
   }

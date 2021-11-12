@@ -11,13 +11,15 @@
   <div class="heroes-list-container">
   <h2>My Heroes</h2>
   <ul class="heroes">
-    <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}">
+    <div class="hero-preview-container" *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
       <li >
         <span class="badge">{{hero.id}}</span> {{hero.name}} | {{hero.element}}
       </li>
-      <button class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
     </a>
+    <button class="delete" title="delete hero"
+    (click)="delete(hero)">x</button>
+    </div>
   </ul>
   </div>
 <!-- This is a one-way data binding from the selectedHero property of the HeroesComponent to the hero property of the target element, which maps to the hero property of the HeroDetailComponent -->
