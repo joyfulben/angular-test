@@ -2,6 +2,29 @@
 .heroes-container {
   display: flex;
   flex-direction: column;
+  form {
+    margin-left: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    .input-container {
+      width: 300px;
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+      input {
+        width: 170px;
+      }
+
+    }
+  }
+  .add-button {
+    align-self: flex-end;
+    width: 150px;
+    min-height: 35px;
+  }
   .hero-preview-container {
     display: flex;
     align-items: center;
@@ -30,7 +53,8 @@
     height: 50px;
   }
   .heroes-list-container{
-    margin-right: 60px;
+    margin: 120px 0 0 30px;
+    position: relative;
   }
   app-hero-detail {
     background-color: silver;

@@ -1,12 +1,16 @@
 <div class="heroes-container">
   <form class="add-hero-container">
-    <label for="new-hero">Hero name: </label>
-    <input id="new-hero" #heroName />
-    <label for="new-hero-element">Element: </label>
-    <input id="new-hero-element" #heroElement/>
+    <div class="input-container">
+      <label for="new-hero">Hero name: </label>
+      <input id="new-hero" #heroName />
+    </div>
+    <div class="input-container">
+      <label for="new-hero-element">Element: </label>
+      <input id="new-hero-element" #heroElement/>
+    </div>
 
     <!-- (click) passes input value to add() and then clears the input -->
-    <button class="add-button" type="submit" (click)="add(heroName.value, heroElement.value);">
+    <button class="add-button" type="submit" (click)="add(heroName.value, heroElement.value); heroName.value=''; heroElement.value=''">
       Add hero
     </button>
   </form>
