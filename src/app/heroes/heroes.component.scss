@@ -30,6 +30,34 @@
     align-items: center;
     a {
         min-width: 250px;
+        text-decoration: none;
+        color: rgb(255, 210, 210);
+        text-shadow: 0 0 3px black;
+    }
+    &.fire {
+      li {
+        background-color: rgb(182, 35, 9);
+      }
+    }
+    &.water {
+      li {
+        background-color: rgb(12, 8, 219);
+      }
+    }
+    &.earth {
+      li {
+        background-color: rgb(131, 79, 0);
+      }
+    }
+    &.magma {
+      li {
+        background-color: rgb(155, 0, 186);
+      }
+    }
+    &.air {
+      li {
+        background-color: rgb(144, 255, 227);
+      }
     }
     .delete {
       max-height: 30px;
