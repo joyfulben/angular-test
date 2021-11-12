@@ -1,6 +1,10 @@
 /* HeroesComponent's private CSS styles */
 .heroes-container {
   display: flex;
+  flex-direction: column;
+  .add-hero-container {
+    height: 50px;
+  }
   .heroes-list-container{
     margin-right: 60px;
   }
