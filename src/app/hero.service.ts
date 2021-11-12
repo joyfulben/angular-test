@@ -42,6 +42,20 @@ export class HeroService {
     catchError(this.handleError<Hero>(`getHero id=${id}`))
   );
 }
+
+/* GET heroes whose name contains search term */
+searchHeroes(term: string): Observable<Hero[]> {
+  if (!term.trim()) {
+    // if not search term, return empty hero array.
+    return of([]);
+  }
+  return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+    tap(x => x.length ?
+       this.log(`found heroes matching "${term}"`) :
+       this.log(`no heroes matching "${term}"`)),
+    catchError(this.handleError<Hero[]>('searchHeroes', []))
+  );
+}
 /** PUT: update the hero on the server */
 updateHero(hero: Hero): Observable<any> {
   return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
