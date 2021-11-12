@@ -16,9 +16,11 @@ export class HeroService {
     this.messageService.add('HeroService: fetched heroes');
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
+        tap(_ => this.log('fetched heroes')),
         catchError(this.handleError<Hero[]>('getHeroes', []))
       );
   }
+
   private handleError<T>(operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {
 
@@ -33,11 +35,12 @@ export class HeroService {
   };
 }
   getHero(id: number): Observable<Hero> {
-  // For now, assume that a hero with the specified `id` always exists.
-  // Error handling will be added in the next step of the tutorial.
-  const hero = HEROES.find(h => h.id === id)!;
+  const url = `${this.heroesUrl}/${id}`;
   this.messageService.add(`HeroService: fetched hero id=${id}`);
-  return of(hero);
+  return this.http.get<Hero>(url).pipe(
+    tap(_ => this.log(`fetched hero id=${id}`)),
+    catchError(this.handleError<Hero>(`getHero id=${id}`))
+  );
 }
   // This is a typical "service-in-service" scenario: you inject the MessageService into the HeroService which is injected into the HeroesComponent.
   constructor(
