@@ -42,6 +42,17 @@ export class HeroService {
     catchError(this.handleError<Hero>(`getHero id=${id}`))
   );
 }
+/** PUT: update the hero on the server */
+updateHero(hero: Hero): Observable<any> {
+  return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+    tap(_ => this.log(`updated hero id=${hero.id}`)),
+    catchError(this.handleError<any>('updateHero'))
+  );
+}
+
+httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
   // This is a typical "service-in-service" scenario: you inject the MessageService into the HeroService which is injected into the HeroesComponent.
   constructor(
     private http: HttpClient,
