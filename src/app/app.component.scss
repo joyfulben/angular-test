@@ -1,10 +1,18 @@
-.main-nav a{
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(185, 185, 185, 0.66);
+  max-width: 350px;
+  margin: 0 30%;
+  a {
   margin: 20px;
   background-color: rgb(134, 244, 128);
   text-decoration: none;
   padding: 10px;
   border-radius: 10px;
-  &:hover {
-    background-color: rgb(142, 187, 144);
+    &:hover {
+      background-color: rgb(142, 187, 144);
+    }
   }
 }
